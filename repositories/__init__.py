@@ -54,6 +54,16 @@ from repositories.inference_repo import (
     list_inference_logs_by_query
 )
 
+from repositories.upload_repo import (
+    create_upload,
+    get_upload_by_id,
+    list_uploads_by_user,
+    list_uploads_by_client,
+    list_uploads_by_tab,
+    update_upload,
+    delete_upload
+)
+
 __all__ = [
     # User
     "create_user", "get_user_by_id", "get_by_email", "list_users",
@@ -75,6 +85,9 @@ __all__ = [
     # Junior
     "append_log", "get_junior_log_by_id", "list_junior_logs_by_lawyer",
     # Inference
-    "log_inference", "get_inference_log_by_id", "list_inference_logs_by_query"
+    "log_inference", "get_inference_log_by_id", "list_inference_logs_by_query",
+    # Upload
+    "create_upload", "get_upload_by_id", "list_uploads_by_user",
+    "list_uploads_by_client", "list_uploads_by_tab", "update_upload", "delete_upload"
 ]
 

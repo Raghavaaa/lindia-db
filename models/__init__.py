@@ -6,6 +6,7 @@ from models.property_opinion import PropertyOpinion
 from models.research_query import ResearchQuery
 from models.junior_log import JuniorLog
 from models.inference_log import InferenceLog
+from models.upload import Upload, UploadTab
 
 __all__ = [
     "Base",
@@ -16,5 +17,7 @@ __all__ = [
     "ResearchQuery",
     "JuniorLog",
     "InferenceLog",
+    "Upload",
+    "UploadTab",
 ]
 
