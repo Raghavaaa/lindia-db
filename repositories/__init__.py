@@ -64,6 +64,16 @@ from repositories.upload_repo import (
     delete_upload
 )
 
+from repositories.document_repo import (
+    create_document,
+    get_document_by_id,
+    list_documents_by_client,
+    list_documents_by_user,
+    list_documents_by_module,
+    update_document,
+    delete_document
+)
+
 __all__ = [
     # User
     "create_user", "get_user_by_id", "get_by_email", "list_users",
@@ -88,6 +98,9 @@ __all__ = [
     "log_inference", "get_inference_log_by_id", "list_inference_logs_by_query",
     # Upload
     "create_upload", "get_upload_by_id", "list_uploads_by_user",
-    "list_uploads_by_client", "list_uploads_by_tab", "update_upload", "delete_upload"
+    "list_uploads_by_client", "list_uploads_by_tab", "update_upload", "delete_upload",
+    # Document
+    "create_document", "get_document_by_id", "list_documents_by_client",
+    "list_documents_by_user", "list_documents_by_module", "update_document", "delete_document"
 ]
 

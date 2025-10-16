@@ -7,6 +7,7 @@ from models.research_query import ResearchQuery
 from models.junior_log import JuniorLog
 from models.inference_log import InferenceLog
 from models.upload import Upload, UploadTab
+from models.document import Document
 
 __all__ = [
     "Base",
@@ -19,5 +20,6 @@ __all__ = [
     "InferenceLog",
     "Upload",
     "UploadTab",
+    "Document",
 ]
 
