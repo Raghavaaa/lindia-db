@@ -16,15 +16,23 @@ from scripts.seed_via_models import seed_data as run_seed
 # Use tmp_seed.db for testing
 TEST_DB = "sqlite:///./tmp_seed.db"
 
+@pytest.fixture(scope="module", autouse=True)
+def setup_test_db():
+    """Set up test database before any tests run."""
+    os.environ["DATABASE_URL"] = TEST_DB
+    # Create tables first
+    engine = create_engine(TEST_DB, echo=False)
+    Base.metadata.create_all(bind=engine)
+    engine.dispose()
+    yield
+    # Cleanup at end
+    
 @pytest.fixture(scope="module")
 def engine():
     """Create test database engine."""
-    os.environ["DATABASE_URL"] = TEST_DB
     engine = create_engine(TEST_DB, echo=False)
-    Base.metadata.create_all(bind=engine)
     yield engine
     engine.dispose()
-    # Cleanup happens in separate test
 
 @pytest.fixture
 def session(engine):
