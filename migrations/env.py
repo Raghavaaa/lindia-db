@@ -4,6 +4,10 @@ from sqlalchemy import pool
 from alembic import context
 import os
 import sys
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Add project root to path so models can be imported
 sys.path.insert(0, os.path.realpath(os.path.join(os.path.dirname(__file__), '..')))
